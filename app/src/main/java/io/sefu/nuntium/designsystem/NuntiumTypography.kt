@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 import io.sefu.nuntium.R
 
 val SFProText = FontFamily(
-    Font(R.raw.sfproreg, FontWeight.Normal), Font(R.raw.sfprosemibold, FontWeight.Bold)
+    Font(R.raw.sfproreg, FontWeight.Normal), Font(R.raw.sfprosemibold, FontWeight.SemiBold)
 )
 
 class NuntiumTypography internal constructor(
