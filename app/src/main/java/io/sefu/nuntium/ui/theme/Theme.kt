@@ -1,44 +1,37 @@
 package io.sefu.nuntium.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import io.sefu.nuntium.designsystem.*
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
-private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
-)
+private val DarkColorPalette = darkSpaceColors()
 
-private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
+private val LightColorPalette = lightSpaceColors()
 
 @Composable
-fun NuntiumTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun ComposeDesignSystemTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
         LightColorPalette
     }
 
-    MaterialTheme(
+    val systemUiController = rememberSystemUiController()
+    systemUiController.setStatusBarColor(
+        color = NuntiumTheme.colors.shadesBlack,
+    )
+    systemUiController.setNavigationBarColor(
+        color = NuntiumTheme.colors.neutral_1
+    )
+
+    NuntiumTheme(
         colors = colors,
-        typography = Typography,
-        shapes = Shapes,
+        typography = NuntiumTypography(),
+        shapes = NuntiumShapes(),
         content = content
     )
 }
