@@ -22,10 +22,10 @@ fun ComposeDesignSystemTheme(
 
     val systemUiController = rememberSystemUiController()
     systemUiController.setStatusBarColor(
-        color = NuntiumTheme.colors.shadesBlack,
+        color = NuntiumTheme.colors.primaryPurple,
     )
     systemUiController.setNavigationBarColor(
-        color = NuntiumTheme.colors.neutral_1
+        color = NuntiumTheme.colors.primaryPurple
     )
 
     NuntiumTheme(
