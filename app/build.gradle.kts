@@ -54,6 +54,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.3.3")
     implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
     implementation("androidx.compose.foundation:foundation:1.3.1")
+    implementation("androidx.compose.material:material:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation ("app.rive:rive-android:4.0.0")
     implementation ("androidx.startup:startup-runtime:1.1.0")

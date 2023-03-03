@@ -1,12 +1,13 @@
 package io.sefu.nuntium.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
@@ -22,8 +23,13 @@ fun SplashScreen(navController: NavController) {
             .background(color = NuntiumTheme.colors.primaryPurple),
         contentAlignment = Alignment.Center
     ) {
-        AndroidView(modifier = Modifier.size(120.dp),factory = { RiveAnimationView(it).apply {
-            setRiveResource(R.raw.logoanim)
-        } })
+        AndroidView(modifier = Modifier.size(48.dp), factory = {
+            RiveAnimationView(it).apply {
+                setRiveResource(R.raw.logoanim)
+            }
+        })
+
+        Image(painter = painterResource(id = R.drawable.logo_text), contentDescription = "Logo text", modifier = Modifier.padding(top=96.dp))
+
     }
 }
