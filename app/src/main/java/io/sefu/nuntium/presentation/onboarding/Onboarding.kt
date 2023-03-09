@@ -26,6 +26,7 @@ import com.google.accompanist.pager.rememberPagerState
 import io.sefu.nuntium.R
 import io.sefu.nuntium.composable.NuntiumButton
 import io.sefu.nuntium.designsystem.NuntiumTheme
+import io.sefu.nuntium.navigation.Screens
 import kotlin.math.absoluteValue
 
 data class OnboardingData(val pageImage: Int, val name: String, val description: String)
@@ -128,9 +129,11 @@ fun Onboarding(navController: NavController) {
                 )
             )
 
-            NuntiumButton(
-                modifier = Modifier.padding(16.dp), textValue = "Next"
-            )
+            Spacer(modifier = Modifier.height(56.dp))
+
+            NuntiumButton(modifier = Modifier.padding(16.dp), textValue = "Next", onClick = {
+                navController.navigate(Screens.GetStartedScreen.routes)
+            })
         }
     }
 }

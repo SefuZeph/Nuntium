@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.sefu.nuntium.presentation.SplashScreen
+import io.sefu.nuntium.presentation.onboarding.GetStarted
 import io.sefu.nuntium.presentation.onboarding.Onboarding
 
 @Composable
@@ -18,6 +19,10 @@ fun Navigation() {
 
         composable(route = Screens.OnBoarding.routes) {
             Onboarding(navController = navController)
+        }
+
+        composable(route = Screens.GetStartedScreen.routes) {
+            GetStarted(navController = navController)
         }
     }
 

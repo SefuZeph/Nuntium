@@ -13,9 +13,9 @@ import androidx.compose.ui.unit.sp
 import io.sefu.nuntium.designsystem.NuntiumTheme
 
 @Composable
-fun NuntiumButton(modifier: Modifier = Modifier, textValue: String = "") {
+fun NuntiumButton(modifier: Modifier = Modifier, textValue: String = "", onClick: () -> Unit) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         modifier = modifier
             .fillMaxWidth()
             .height(56.dp),
