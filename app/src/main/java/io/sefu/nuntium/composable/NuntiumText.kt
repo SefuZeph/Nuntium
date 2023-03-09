@@ -15,7 +15,7 @@ import io.sefu.nuntium.designsystem.LocalContentColor
 import io.sefu.nuntium.designsystem.NuntiumTheme
 
 @Composable
-fun Text(
+fun NuntiumText(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,

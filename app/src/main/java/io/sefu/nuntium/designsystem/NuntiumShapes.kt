@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.dp
 
 class NuntiumShapes(
     val small: CornerBasedShape = RoundedCornerShape(8.dp),
-    val medium: CornerBasedShape = RoundedCornerShape(16.dp),
+    val medium: CornerBasedShape = RoundedCornerShape(12.dp),
     val large: CornerBasedShape = RoundedCornerShape(45.dp)
 ) {
 

@@ -10,7 +10,7 @@ private val DarkColorPalette = darkSpaceColors()
 private val LightColorPalette = lightSpaceColors()
 
 @Composable
-fun ComposeDesignSystemTheme(
+fun NuntiumDesignSystemTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
@@ -25,7 +25,7 @@ fun ComposeDesignSystemTheme(
         color = NuntiumTheme.colors.primaryPurple,
     )
     systemUiController.setNavigationBarColor(
-        color = NuntiumTheme.colors.primaryPurple
+        color = NuntiumTheme.colors.white
     )
 
     NuntiumTheme(
