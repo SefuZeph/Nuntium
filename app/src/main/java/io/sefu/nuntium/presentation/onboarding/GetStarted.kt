@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import io.sefu.nuntium.composable.NuntiumButton
 import io.sefu.nuntium.designsystem.NuntiumTheme
 import io.sefu.nuntium.R
+import io.sefu.nuntium.navigation.Screens
 
 @Composable
 fun GetStarted(navController: NavController) {
@@ -56,7 +57,7 @@ fun GetStarted(navController: NavController) {
             Spacer(modifier = Modifier.height(64.dp))
 
             NuntiumButton(modifier = Modifier.padding(16.dp), textValue = "Get Started", onClick = {
-
+                navController.navigate(Screens.LoginScreen.routes)
             })
         }
     }
