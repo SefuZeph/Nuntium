@@ -10,12 +10,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.sefu.nuntium.designsystem.NuntiumTheme
 
 @Composable
-fun NuntiumEditText(modifier: Modifier, placeHolder: String = "", imagePlaceHolder: Int) {
+fun NuntiumEditText(
+    modifier: Modifier,
+    placeHolder: String = "",
+    imagePlaceHolder: Int,
+    iconWidth: Dp = 0.dp,
+    iconHeight: Dp = 0.dp
+) {
     var editTextValue by remember {
         mutableStateOf("")
     }
@@ -37,16 +44,16 @@ fun NuntiumEditText(modifier: Modifier, placeHolder: String = "", imagePlaceHold
                     )
                     .padding(16.dp), verticalAlignment = Alignment.CenterVertically
             ) {
-
+                Image(
+                    painter = painterResource(id = imagePlaceHolder),
+                    contentDescription = "edittext icon",
+                    modifier = Modifier
+                        .width(iconWidth)
+                        .height(iconHeight)
+                )
+                Spacer(modifier = Modifier.width(24.dp))
                 if (editTextValue.isEmpty()) {
-                    Image(
-                        painter = painterResource(id = imagePlaceHolder),
-                        contentDescription = "edittext icon",
-                        modifier = Modifier
-                            .width(20.dp)
-                            .height(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(24.dp))
+
                     NuntiumText(
                         placeHolder, style = NuntiumTheme.typography.h5.copy(
                             fontSize = 16.sp,
