@@ -1,26 +1,18 @@
 package io.sefu.nuntium.presentation.authentication
 
-import android.widget.ImageView
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.emoji2.widget.EmojiTextView
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import io.sefu.nuntium.R
-import io.sefu.nuntium.composable.HeaderDescriptionTopBar
-import io.sefu.nuntium.composable.NuntiumButton
-import io.sefu.nuntium.composable.NuntiumEditText
-import io.sefu.nuntium.composable.NuntiumText
+import io.sefu.nuntium.composable.*
 import io.sefu.nuntium.designsystem.NuntiumTheme
 
 @Composable
@@ -51,16 +43,62 @@ fun LoginScreen(navController: NavController) {
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 NuntiumText(
-                    text = "Forgot Password?",
-                    style = NuntiumTheme.typography.h6.copy(
-                        color = NuntiumTheme.colors.greyPrimary, textAlign = TextAlign.End
-                    ),
+                    text = "Forgot Password?", style = NuntiumTheme.typography.h6.copy(
+                        color = NuntiumTheme.colors.greyPrimary
+                    ), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.End
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Sign In") {
 
+                }
+            }
+            item {
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    Spacer(modifier = Modifier.weight(1.0f))
+                    Spacer(modifier = Modifier.height(24.dp))
+                    NuntiumText(
+                        text = "or", modifier = Modifier.fillMaxWidth(), style = TextStyle(
+                            color = NuntiumTheme.colors.greyPrimary,
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp
+                        )
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    NuntiumSocialButton(
+                        onClick = {},
+                        socialIcon = R.drawable.google_logo,
+                        textValue = "Sign In with Google"
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    NuntiumSocialButton(
+                        onClick = {},
+                        socialIcon = R.drawable.facebook_logo,
+                        textValue = "Sign In with Facebook"
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        NuntiumText(
+                            text = "Don't have an account?", modifier = Modifier, style = TextStyle(
+                                color = NuntiumTheme.colors.greyPrimary,
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 16.sp
+                            )
+                        )
+                        NuntiumText(
+                            text = "Sign Up", modifier = Modifier, style = TextStyle(
+                                color = NuntiumTheme.colors.greyPrimary,
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 16.sp
+                            )
+                        )
+                    }
                 }
             }
         })
