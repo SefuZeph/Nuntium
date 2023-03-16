@@ -1,5 +1,6 @@
 package io.sefu.nuntium.presentation.authentication
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
@@ -14,6 +15,7 @@ import androidx.navigation.NavController
 import io.sefu.nuntium.R
 import io.sefu.nuntium.composable.*
 import io.sefu.nuntium.designsystem.NuntiumTheme
+import io.sefu.nuntium.navigation.Screens
 
 @Composable
 fun LoginScreen(navController: NavController) {
@@ -45,7 +47,11 @@ fun LoginScreen(navController: NavController) {
                 NuntiumText(
                     text = "Forgot Password?", style = NuntiumTheme.typography.h6.copy(
                         color = NuntiumTheme.colors.greyPrimary
-                    ), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.End
+                    ), modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            navController.navigate(Screens.ForgotPasswordScreen.routes)
+                        }, textAlign = TextAlign.End
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -55,7 +61,11 @@ fun LoginScreen(navController: NavController) {
                 }
             }
             item {
-                Column(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                ) {
                     Spacer(modifier = Modifier.height(24.dp))
                     NuntiumText(
                         text = "or", modifier = Modifier.fillMaxWidth(), style = TextStyle(
@@ -77,30 +87,31 @@ fun LoginScreen(navController: NavController) {
                         socialIcon = R.drawable.facebook_logo,
                         textValue = "Sign In with Facebook"
                     )
-                    Spacer(modifier = Modifier.height(12.dp))
-                    Spacer(modifier = Modifier.height(48.dp))
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center
-                    ) {
-                        NuntiumText(
-                            text = "Don't have an account?", modifier = Modifier, style = TextStyle(
-                                color = NuntiumTheme.colors.greyPrimary,
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 16.sp
-                            )
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        NuntiumText(
-                            text = "Sign Up", modifier = Modifier, style = TextStyle(
-                                color = NuntiumTheme.colors.blackPrimary,
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 16.sp
-                            )
-                        )
-                    }
+
                 }
             }
         })
+
+        Row(
+            modifier = Modifier.fillMaxWidth().align(alignment = Alignment.BottomCenter),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            NuntiumText(
+                text = "Don't have an account?", modifier = Modifier, style = TextStyle(
+                    color = NuntiumTheme.colors.greyPrimary,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 16.sp
+                )
+            )
+            Spacer(modifier = Modifier.width(4.dp))
+            NuntiumText(
+                text = "Sign Up", modifier = Modifier, style = TextStyle(
+                    color = NuntiumTheme.colors.blackPrimary,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 16.sp
+                )
+            )
+        }
     }
 }
