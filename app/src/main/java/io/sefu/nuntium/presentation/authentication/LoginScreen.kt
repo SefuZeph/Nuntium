@@ -55,8 +55,7 @@ fun LoginScreen(navController: NavController) {
                 }
             }
             item {
-                Column(modifier = Modifier.fillMaxWidth()) {
-                    Spacer(modifier = Modifier.weight(1.0f))
+                Column(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
                     Spacer(modifier = Modifier.height(24.dp))
                     NuntiumText(
                         text = "or", modifier = Modifier.fillMaxWidth(), style = TextStyle(
@@ -79,10 +78,10 @@ fun LoginScreen(navController: NavController) {
                         textValue = "Sign In with Facebook"
                     )
                     Spacer(modifier = Modifier.height(12.dp))
-
+                    Spacer(modifier = Modifier.height(48.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
+                        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center
                     ) {
                         NuntiumText(
                             text = "Don't have an account?", modifier = Modifier, style = TextStyle(
@@ -91,9 +90,10 @@ fun LoginScreen(navController: NavController) {
                                 fontSize = 16.sp
                             )
                         )
+                        Spacer(modifier = Modifier.width(4.dp))
                         NuntiumText(
                             text = "Sign Up", modifier = Modifier, style = TextStyle(
-                                color = NuntiumTheme.colors.greyPrimary,
+                                color = NuntiumTheme.colors.blackPrimary,
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 16.sp
                             )
