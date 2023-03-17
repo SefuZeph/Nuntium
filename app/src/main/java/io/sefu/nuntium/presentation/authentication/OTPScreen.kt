@@ -45,7 +45,7 @@ fun OTPScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Confirm") {
-                    navController.navigate(Screens.OTPScreen.routes)
+                    navController.navigate(Screens.NewPasswordScreen.routes)
                 }
             }
         })
@@ -57,7 +57,7 @@ fun OTPScreen(navController: NavController) {
             horizontalArrangement = Arrangement.Center
         ) {
             NuntiumText(
-                text = "Remember the password?", modifier = Modifier, style = TextStyle(
+                text = "Didn't receive an email?", modifier = Modifier, style = TextStyle(
                     color = NuntiumTheme.colors.greyPrimary,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 16.sp
@@ -65,7 +65,7 @@ fun OTPScreen(navController: NavController) {
             )
             Spacer(modifier = Modifier.width(4.dp))
             NuntiumText(
-                text = "Try again", modifier = Modifier, style = TextStyle(
+                text = "Send again", modifier = Modifier, style = TextStyle(
                     color = NuntiumTheme.colors.blackPrimary,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 16.sp

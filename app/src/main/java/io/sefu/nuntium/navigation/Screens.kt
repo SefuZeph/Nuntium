@@ -5,6 +5,7 @@ sealed class Screens(val routes: String) {
     object OnBoarding : Screens("OnBoarding")
     object GetStartedScreen : Screens("GetStartedScreen")
     object LoginScreen : Screens("LoginScreen")
-    object ForgotPasswordScreen:Screens("forgotPasswordScreen")
-    object OTPScreen:Screens("otpScreen")
+    object ForgotPasswordScreen : Screens("forgotPasswordScreen")
+    object OTPScreen : Screens("otpScreen")
+    object NewPasswordScreen : Screens("newPasswordScreen")
 }
