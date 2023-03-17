@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import io.sefu.nuntium.presentation.SplashScreen
 import io.sefu.nuntium.presentation.authentication.ForgotPasswordScreen
 import io.sefu.nuntium.presentation.authentication.LoginScreen
+import io.sefu.nuntium.presentation.authentication.OTPScreen
 import io.sefu.nuntium.presentation.onboarding.GetStarted
 import io.sefu.nuntium.presentation.onboarding.Onboarding
 
@@ -32,6 +33,9 @@ fun Navigation() {
         }
         composable(route = Screens.ForgotPasswordScreen.routes) {
             ForgotPasswordScreen(navController = navController)
+        }
+        composable(route = Screens.OTPScreen.routes) {
+            OTPScreen(navController = navController)
         }
     }
 

@@ -37,7 +37,7 @@ fun ForgotPasswordScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Next") {
-
+                    navController.navigate(Screens.OTPScreen.routes)
                 }
             }
         })
