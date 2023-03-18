@@ -93,7 +93,12 @@ fun LoginScreen(navController: NavController) {
         })
 
         Row(
-            modifier = Modifier.fillMaxWidth().align(alignment = Alignment.BottomCenter),
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(alignment = Alignment.BottomCenter)
+                .clickable {
+                    navController.navigate(Screens.SignUpScreen.routes)
+                },
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
