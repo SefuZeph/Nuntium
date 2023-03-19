@@ -8,6 +8,7 @@ import io.sefu.nuntium.presentation.SplashScreen
 import io.sefu.nuntium.presentation.authentication.*
 import io.sefu.nuntium.presentation.onboarding.GetStarted
 import io.sefu.nuntium.presentation.onboarding.Onboarding
+import io.sefu.nuntium.presentation.topics.TopicScreen
 
 @Composable
 fun Navigation() {
@@ -42,6 +43,10 @@ fun Navigation() {
 
         composable(route = Screens.SignUpScreen.routes) {
             SignUpScreen(navController = navController)
+        }
+
+        composable(route = Screens.TopicScreen.routes) {
+            TopicScreen(navController = navController)
         }
     }
 

@@ -58,6 +58,7 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.0.1")
     implementation ("com.google.accompanist:accompanist-pager:0.29.1-alpha")
     implementation ("androidx.compose.ui:ui-util:1.3.3")
+    implementation("androidx.core:core-ktx:+")
     val emoji2_version = "1.2.0"
 
     implementation("androidx.emoji2:emoji2:$emoji2_version")
