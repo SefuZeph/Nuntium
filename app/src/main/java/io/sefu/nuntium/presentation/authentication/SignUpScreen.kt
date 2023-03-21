@@ -66,20 +66,18 @@ fun SignUpScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Confirm") {
-                    navController.navigate(Screens.OTPScreen.routes)
+                    navController.navigate(Screens.TopicScreen.routes)
                 }
             }
         })
-        Row(
-            modifier = Modifier
-                .clickable {
-                    navController.navigate(Screens.LoginScreen.routes)
-                }
-                .fillMaxWidth()
-                .align(alignment = Alignment.BottomCenter),
+        Row(modifier = Modifier
+            .clickable {
+                navController.navigate(Screens.LoginScreen.routes)
+            }
+            .fillMaxWidth()
+            .align(alignment = Alignment.BottomCenter),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
-        ) {
+            horizontalArrangement = Arrangement.Center) {
             NuntiumText(
                 text = "Already have an account?", modifier = Modifier, style = TextStyle(
                     color = NuntiumTheme.colors.greyPrimary,

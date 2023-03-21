@@ -47,7 +47,7 @@ fun NewPasswordScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Confirm") {
-                    navController.navigate(Screens.OTPScreen.routes)
+                    navController.navigate(Screens.LoginScreen.routes)
                 }
             }
         })

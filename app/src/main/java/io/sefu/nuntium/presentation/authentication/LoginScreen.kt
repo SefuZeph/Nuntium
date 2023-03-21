@@ -57,7 +57,7 @@ fun LoginScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 NuntiumButton(modifier = Modifier.fillMaxWidth(), textValue = "Sign In") {
-
+                    navController.navigate(Screens.TopicScreen.routes)
                 }
             }
             item {

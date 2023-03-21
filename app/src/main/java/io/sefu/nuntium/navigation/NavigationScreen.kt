@@ -37,7 +37,7 @@ fun Navigation() {
             OTPScreen(navController = navController)
         }
 
-        composable(route = Screens.OTPScreen.routes) {
+        composable(route = Screens.NewPasswordScreen.routes) {
             NewPasswordScreen(navController = navController)
         }
 
