@@ -1,5 +1,15 @@
 # Nuntium
-Given a news  item display data
+Nuntium is an Android application that allows users to stay up-to-date with the latest news and events from around the world. The app is built using Kotlin as the main language and Jetpack Compose for the user interface.
+
+## Features
+* Browse news articles from various sources
+* Read full articles within the app
+* Bookmark articles for future reference
+* Search for articles by keyword or topic
+* Dark mode support
+* Receive notifications for breaking news
+* Customize news sources based on your preferences
+
 
 # License
 ```xml
