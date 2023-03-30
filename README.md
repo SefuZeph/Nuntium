@@ -1,5 +1,33 @@
 # Nuntium
-Given a news  item display data
+Nuntium is an Android application that allows users to stay up-to-date with the latest news and events from around the world. The app is built using Kotlin as the main language and Jetpack Compose for the user interface.
+
+## Features
+* Browse news articles from various sources
+* Read full articles within the app
+* Bookmark articles for future reference
+* Search for articles by keyword or topic
+* Dark mode support
+* Receive notifications for breaking news
+* Customize news sources based on your preferences
+
+# Screenshots
+
+# Getting Started
+
+To get started with the app, you will need to have Android Studio installed on your computer. Once you have Android Studio installed, you can clone the repository and open the project in Android Studio.
+
+Markup :  `https://github.com/SefuZeph/Nuntium.git`
+
+# Libraries Used
+
+* Jetpack Compose - A modern toolkit for building native Android UI
+* Retrofit - A type-safe HTTP client for Android and Java
+* Coroutines - A Kotlin library for asynchronous programming
+* Room - A SQLite object mapping library
+* Glide - An image loading and caching library for Android
+* Hilt - A dependency injection library for Android
+* Firebase Cloud Messaging - A cross-platform messaging solution
+ 
 
 # License
 ```xml
