@@ -10,6 +10,14 @@ Nuntium is an Android application that allows users to stay up-to-date with the 
 * Receive notifications for breaking news
 * Customize news sources based on your preferences
 
+# Screenshots
+
+# Getting Started
+
+To get started with the app, you will need to have Android Studio installed on your computer. Once you have Android Studio installed, you can clone the repository and open the project in Android Studio.
+
+Markup :  `https://github.com/SefuZeph/Nuntium.git`
+
 
 # License
 ```xml
