@@ -18,6 +18,16 @@ To get started with the app, you will need to have Android Studio installed on y
 
 Markup :  `https://github.com/SefuZeph/Nuntium.git`
 
+# Libraries Used
+
+* Jetpack Compose - A modern toolkit for building native Android UI
+* Retrofit - A type-safe HTTP client for Android and Java
+* Coroutines - A Kotlin library for asynchronous programming
+* Room - A SQLite object mapping library
+* Glide - An image loading and caching library for Android
+* Hilt - A dependency injection library for Android
+* Firebase Cloud Messaging - A cross-platform messaging solution
+ 
 
 # License
 ```xml
