@@ -7,8 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -18,23 +17,27 @@ import io.sefu.nuntium.composable.NuntiumButton
 import io.sefu.nuntium.composable.NuntiumTopicCard
 import io.sefu.nuntium.navigation.Screens
 
-data class TopicSelection(val index: Int, val value: String,val isSelected:Boolean,)
+data class TopicSelection(val index: Int, val value: String, val isSelected: Boolean)
 
 @Composable
 fun TopicScreen(navController: NavController) {
 
-    val topicList = mutableListOf(
-        TopicSelection(0, "\uD83C\uDFC8  Sports",false),
-        TopicSelection(1, "⚖️ Politics",false),
-        TopicSelection(2, "\uD83C\uDF1E  Life",false),
-        TopicSelection(3, "\uD83C\uDFAE  Gaming",false),
-        TopicSelection(4, "\uD83D\uDC3B  Animals",false),
-        TopicSelection(5, "\uD83C\uDF34  Nature",false),
-        TopicSelection(6, "\uD83C\uDF54  Food",false),
-        TopicSelection(7, "\uD83C\uDFA8  Art",false),
-        TopicSelection(8, "\uD83D\uDCDC  History",false),
-        TopicSelection(9, "\uD83D\uDC57  Fashion",false)
-    )
+    var topicList by remember {
+        mutableStateOf(
+            mutableListOf(
+                TopicSelection(0, "\uD83C\uDFC8  Sports", false),
+                TopicSelection(1, "⚖️ Politics", false),
+                TopicSelection(2, "\uD83C\uDF1E  Life", false),
+                TopicSelection(3, "\uD83C\uDFAE  Gaming", false),
+                TopicSelection(4, "\uD83D\uDC3B  Animals", false),
+                TopicSelection(5, "\uD83C\uDF34  Nature", false),
+                TopicSelection(6, "\uD83C\uDF54  Food", false),
+                TopicSelection(7, "\uD83C\uDFA8  Art", false),
+                TopicSelection(8, "\uD83D\uDCDC  History", false),
+                TopicSelection(9, "\uD83D\uDC57  Fashion", false)
+            )
+        )
+    }
     val selectedItems = remember { mutableSetOf<Int>() }
 
     fun toggleSelection(index: Int) {
@@ -44,6 +47,15 @@ fun TopicScreen(navController: NavController) {
             selectedItems.add(index)
         }
     }
+//    val selectedItems = remember { mutableSetOf<Int>() }
+//
+//    fun toggleSelection(index: Int) {
+//        if (selectedItems.contains(index)) {
+//            selectedItems.remove(index)
+//        } else {
+//            selectedItems.add(index)
+//        }
+//    }
 
     HeaderDescriptionTopBar(
         header = "Select your favorite topics",
@@ -58,9 +70,17 @@ fun TopicScreen(navController: NavController) {
                         modifier = Modifier
                             .padding(4.dp)
                             .clickable {
-                                toggleSelection(topicList[it].index)
+                                topicList = topicList
+                                    .mapIndexed { index, topicSelection ->
+                                        if (it == index) {
+                                            topicSelection.copy(isSelected = !topicSelection.isSelected)
+                                        } else {
+                                            topicSelection
+                                        }
+                                    }
+                                    .toMutableList()
                             },
-                        isSelected = selectedItems.contains(it)
+                        isSelected = topicList[it].isSelected
                     )
                 }
             })
@@ -71,7 +91,7 @@ fun TopicScreen(navController: NavController) {
                 .align(alignment = Alignment.BottomCenter),
             textValue = "Next"
         ) {
-            navController.navigate(Screens.TopicScreen.routes)
+
         }
     }
 }

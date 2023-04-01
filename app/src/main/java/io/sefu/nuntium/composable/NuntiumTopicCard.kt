@@ -21,6 +21,6 @@ fun NuntiumTopicCard(topicName: String, modifier: Modifier, isSelected: Boolean)
                 shape = NuntiumTheme.shapes.medium
             ), contentAlignment = Alignment.Center
     ) {
-        NuntiumText(text = topicName)
+        NuntiumText(text = topicName, style = NuntiumTheme.typography.h4.copy(color = if(isSelected) NuntiumTheme.colors.white else NuntiumTheme.colors.greyDark))
     }
 }
